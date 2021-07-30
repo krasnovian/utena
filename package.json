@@ -7,5 +7,9 @@
     "test": "test"
   },
   "author": "krasnovian",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "eris": "^0.15.1",
+    "yuuko": "^2.2.1"
+  }
 }
