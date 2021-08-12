@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "eris": "^0.15.1",
+    "needle": "^2.8.0",
+    "node-fetch": "^2.6.1",
     "yuuko": "^2.2.1"
   }
 }
