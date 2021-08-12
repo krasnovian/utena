@@ -6,7 +6,12 @@ const config = require('./config.json');
 const utena = new Client({
   token: config.token,
   prefix: '.',
+  ignoreBots: true,
 });
+
+utena.globalCommandRequirements = {
+  guildOnly: true,
+};
 
 const pingCommand = new Command('ping', message => {
   message.channel.createMessage('Pong!');
@@ -20,7 +25,10 @@ const catbois = new Command('catbois', message => {
   message.channel.createMessage('a laughable species');
 });
 
-utena.addCommand(pingCommand)
+utena
+  .addDir(path.join(__dirname, 'events'))
+  .addDir(path.join(__dirname, 'commands'))
+  .addCommand(pingCommand)
   .addCommand(aruCommand)
   .addCommand(catbois)
   .connect()
